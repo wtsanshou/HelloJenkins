@@ -1,0 +1,4 @@
+14th Oct. 2017 starting the project
+
+1. initial a Rest server using gradle, spring boot
+2. use Jenkins
