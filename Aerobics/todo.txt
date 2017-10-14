@@ -1,4 +1,12 @@
 14th Oct. 2017 starting the project
 
 1. initial a Rest server using gradle, spring boot
+
+Add dependencies log slf4j
+Update dependencies junit
+Add dependencies lombok
+Update Gradle
+Install Minimalist Gradle Editor
+
+
 2. use Jenkins

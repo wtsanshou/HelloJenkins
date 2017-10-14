@@ -7,10 +7,16 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
+plugins {
+	id 'io.spring.dependency-management' version "1.0.3.RELEASE"
+	id 'io.franzbecker.gradle-lombok' version '1.8'
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
+	id 'java'	
+
+}
+
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
 
 jar {
     baseName = 'aerobics'
@@ -27,7 +33,21 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
+    
+    // log
+    compile group: 'org.slf4j', name: 'slf4j-ext', version: '1.7.25'  
+    
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("junit:junit")
+    // Junit
+    testCompile 'junit:junit:4.12'
+}
+
+lombok {
+	version = "1.16.18"
+	sha256 = ""
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '4.0.2'
 }
 
