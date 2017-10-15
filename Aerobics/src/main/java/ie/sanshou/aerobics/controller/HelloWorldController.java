@@ -22,7 +22,7 @@ public class HelloWorldController {
     
     @RequestMapping(method=RequestMethod.GET)
     public @ResponseBody Greeting sayHello(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
-    	log.info("fuck");
+    	log.info("Hi log");
     	return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
     

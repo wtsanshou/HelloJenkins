@@ -46,3 +46,9 @@ download workbench at https://dev.mysql.com/downloads/workbench/
 ```bash
 sudo dpkg -i mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb
 ```
+
+## Jenkins
+
+1. using gradle to build war file
+2. In Jenkins build job, run ./gradle build
+3. In Jenkins deploy job, copy the **.war to the /home/sanshou/Jenkins/jenkinsHome/workspace/AerobicsDeployJob/, and config the deploy war/ear to a container

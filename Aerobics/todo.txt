@@ -2,11 +2,22 @@
 
 1. initial a Rest server using gradle, spring boot
 
-Add dependencies log slf4j
-Update dependencies junit
-Add dependencies lombok
-Update Gradle
-Install Minimalist Gradle Editor
-
+//Add dependencies log slf4j
+//Update dependencies junit
+//Add dependencies lombok
+//Congifure lombok
+//Update Gradle
+//Install Minimalist Gradle Editor
+//Install Docker, Docker-compose
+//Build a mysql in Docker
 
 2. use Jenkins
+
+//Build pipeline: build --> deploy --> test --> release
+use at least two users
+put real project in the pipeline
+--get build and deploy done
+Add PDM code checking, code coverage
+deploy the project in Tomcat
+Send Notification
+Catlight
