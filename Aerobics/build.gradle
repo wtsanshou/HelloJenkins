@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+    	jcenter()
         mavenCentral()
     }
     dependencies {
@@ -9,19 +10,28 @@ buildscript {
 
 plugins {
 	id 'io.spring.dependency-management' version "1.0.3.RELEASE"
-	id 'io.franzbecker.gradle-lombok' version '1.8'
     id 'org.springframework.boot' version '1.5.6.RELEASE'
-	id 'java'	
-
+	id 'java'
+		
+	//instant and clever code completion, on-the-fly code analysis and reliable refactoring tools. 
+	id 'idea'
+	id 'eclipse'
+	
+	//war
+	//id 'war
 }
-
-apply plugin: 'eclipse'
-apply plugin: 'idea'
 
 jar {
     baseName = 'aerobics'
     version =  '0.1.0'
 }
+
+//If we need war
+/*war {
+    baseName = 'aerobics'
+    version =  '1.0'
+}
+*/
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -33,6 +43,12 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
+    compileOnly "org.projectlombok:lombok:1.16.18"
+    // JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
+    //compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    
+    // Use MySQL Connector-J
+    //compile 'mysql:mysql-connector-java'
     
     // log
     compile group: 'org.slf4j', name: 'slf4j-ext', version: '1.7.25'  
@@ -42,12 +58,10 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-lombok {
-	version = "1.16.18"
-	sha256 = ""
-}
-
 task wrapper(type: Wrapper) {
 	gradleVersion = '4.0.2'
 }
+
+
+
 
