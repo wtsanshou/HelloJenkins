@@ -5,7 +5,7 @@
 
 ## Install Lombok
 
-1. Add dependencies in gradle
+1. Add dependencies in gradle, refresh
 2. Find the lombok.jar and run `java -jar <lombok-version>.jar
 3. Select your IDE --> install/update
 4. Restart the IDE
@@ -47,8 +47,20 @@ download workbench at https://dev.mysql.com/downloads/workbench/
 sudo dpkg -i mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb
 ```
 
+## Mysql Workbench
+
+download DEB
+
+```bash
+sudo dpkg -i mysql-workbench-community-6.3.9-1ubuntu16.04-amd64.deb
+
+sudo apt-get update
+
+sudo apt-get install mysql-workbench-community
+```
+
 ## Jenkins
 
 1. using gradle to build war file
-2. In Jenkins build job, run ./gradle build
-3. In Jenkins deploy job, copy the **.war to the /home/sanshou/Jenkins/jenkinsHome/workspace/AerobicsDeployJob/, and config the deploy war/ear to a container
+2. In Jenkins build job, run `./gradle build`
+3. In Jenkins deploy job, copy the `**.war` to the `/home/sanshou/Jenkins/jenkinsHome/workspace/AerobicsDeployJob/`, and config the `deploy war/ear to a container`

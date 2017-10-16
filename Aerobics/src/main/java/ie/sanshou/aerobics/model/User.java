@@ -20,9 +20,10 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String name;
-	private String height;
-	private String weight;
+	private Double height;
+	private Double weight;
 	private Integer age;
 	private Boolean gender;
+	private Integer metabolic;
 	
 }

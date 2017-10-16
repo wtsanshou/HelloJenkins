@@ -37,7 +37,7 @@ public class AerobicsApplication_test {
 
 		then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
-
+	
 	@Test
 	public void shouldReturn200WhenSendingRequestToManagementEndpoint() throws Exception {
 		@SuppressWarnings("rawtypes")

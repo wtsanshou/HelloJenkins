@@ -16,8 +16,14 @@
 //Build pipeline: build --> deploy --> test --> release
 use at least two users
 put real project in the pipeline
---get build and deploy done
+//--get build and deploy done
 Add PDM code checking, code coverage
-deploy the project in Tomcat
+//deploy the project in Tomcat
 Send Notification
 Catlight
+
+3. TDD
+
+//Test GET
+Test POST
+Test PUT

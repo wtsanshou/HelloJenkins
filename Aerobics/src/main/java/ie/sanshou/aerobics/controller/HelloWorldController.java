@@ -18,7 +18,6 @@ public class HelloWorldController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
-//    private static final org.slf4j.ext.XLogger log = org.slf4j.ext.XLoggerFactory.getXLogger(HelloWorldController.class);
     
     @RequestMapping(method=RequestMethod.GET)
     public @ResponseBody Greeting sayHello(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
