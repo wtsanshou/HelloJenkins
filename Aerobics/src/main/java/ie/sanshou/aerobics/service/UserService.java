@@ -1,5 +1,7 @@
 package ie.sanshou.aerobics.service;
 
+import java.util.Iterator;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,16 +16,25 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public void save(User user) {
+	public User save(User user) {
+		if(isUserExist(user)) {
+			log.debug("user '{}' is already exist", user.getName());
+			return user;
+		}
 		userRepository.save(user);
-		log.info("Save '{}' rows data to database", user.getName());
+		log.info("Save '{}' to database", user.getName());
+		return user;
 	}
 	
 	public User findByName(String name) {
-		return userRepository.findOne(name);
+		return userRepository.findByName(name);
 	}
 	
-	public Iterable<User> getAllUser(){
-		return userRepository.findAll();
+	public Iterator<User> getAllUsers(){
+		return userRepository.findAll().iterator();
+	}
+
+	public boolean isUserExist(User user) {
+		return userRepository.isUserExist(user.getName());
 	}
 }
