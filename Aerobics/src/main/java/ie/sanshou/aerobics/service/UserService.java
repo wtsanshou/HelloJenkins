@@ -17,7 +17,7 @@ public class UserService {
 	private UserRepository userRepository;
 
 	public User save(User user) {
-		if(isUserExist(user)) {
+		if (isUserExist(user)) {
 			log.debug("user '{}' is already exist", user.getName());
 			return user;
 		}
@@ -25,16 +25,16 @@ public class UserService {
 		log.info("Save '{}' to database", user.getName());
 		return user;
 	}
-	
+
 	public User findByName(String name) {
 		return userRepository.findByName(name);
 	}
-	
-	public Iterator<User> getAllUsers(){
+
+	public Iterator<User> getAllUsers() {
 		return userRepository.findAll().iterator();
 	}
 
 	public boolean isUserExist(User user) {
-		return userRepository.isUserExist(user.getName());
+		return userRepository.findByName(user.getName()) != null;
 	}
 }
