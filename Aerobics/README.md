@@ -61,6 +61,6 @@ sudo apt-get install mysql-workbench-community
 
 ## Jenkins
 
-1. using gradle to build war file
+1. using gradle to build war file, run `./gradle build` locally to make sure build successfully first.
 2. In Jenkins build job, run `./gradle build`
 3. In Jenkins deploy job, copy the `**.war` to the `/home/sanshou/Jenkins/jenkinsHome/workspace/AerobicsDeployJob/`, and config the `deploy war/ear to a container`

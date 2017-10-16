@@ -24,9 +24,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import ie.sanshou.aerobics.controller.UserController;
 import ie.sanshou.aerobics.model.User;
 import ie.sanshou.aerobics.service.UserService;
-import lombok.extern.slf4j.XSlf4j;
 
-@XSlf4j
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = UserController.class, secure = false)
 public class UserService_test {
@@ -78,7 +76,6 @@ public class UserService_test {
 
 		// studentService.addCourse to respond back with mockCourse
 		Mockito.when(userService.save(Mockito.any(User.class))).thenReturn(mockUser);
-		log.debug(exampleUserJson);
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/user").accept(MediaType.APPLICATION_JSON)
 				.content(exampleUserJson).contentType(MediaType.APPLICATION_JSON);
 
