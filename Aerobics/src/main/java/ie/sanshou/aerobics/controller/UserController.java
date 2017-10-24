@@ -41,6 +41,7 @@ public class UserController {
 	
 	@PostMapping()
 	public ResponseEntity<Void> saveAUser(@RequestBody User newUser) {
+		calculateMatabolic(newUser);
 		User user = userService.save(newUser);
 
 		if (user == null)
@@ -50,6 +51,21 @@ public class UserController {
 				.toUri();
 		log.info("saved a user '{}'", user.getName());
 		return ResponseEntity.created(location).build();
+	}
+
+	private void calculateMatabolic(User user) {
+		double metabolic = 0;
+		if(user.getGender() == true) {
+			metabolic = getMetabolic(user, 67, 13.73, 5, 6.9);
+		}
+		else {
+			metabolic = getMetabolic(user, 661, 9.6, 1.72, 4.7);
+		}
+		user.setMetabolic((int)metabolic);
+	}
+
+	private double getMetabolic(User user, int base, double weightRate, double heightRate, double ageRate) {
+		return base + weightRate*user.getWeight() + heightRate * user.getHeight() - ageRate*user.getAge();
 	}
 
 }

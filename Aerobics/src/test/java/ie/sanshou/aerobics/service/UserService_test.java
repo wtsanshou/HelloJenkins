@@ -74,7 +74,6 @@ public class UserService_test {
 	@Test
 	public void shouldSaveTheUser_whenPOSTaUserToServer() throws Exception {
 
-		// studentService.addCourse to respond back with mockCourse
 		Mockito.when(userService.save(Mockito.any(User.class))).thenReturn(mockUser);
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/user").accept(MediaType.APPLICATION_JSON)
 				.content(exampleUserJson).contentType(MediaType.APPLICATION_JSON);

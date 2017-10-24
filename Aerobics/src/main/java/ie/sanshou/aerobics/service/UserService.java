@@ -34,7 +34,7 @@ public class UserService {
 		return userRepository.findAll().iterator();
 	}
 
-	public boolean isUserExist(User user) {
+	private boolean isUserExist(User user) {
 		return userRepository.findByName(user.getName()) != null;
 	}
 }

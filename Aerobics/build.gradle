@@ -16,10 +16,11 @@ plugins {
 	//instant and clever code completion, on-the-fly code analysis and reliable refactoring tools. 
 	id 'idea'
 	id 'eclipse'
-	
-	//war
 	id 'war'
 }
+
+apply plugin: "jacoco"
+
 /*
 jar {
     baseName = 'aerobics'
@@ -54,6 +55,7 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-ext', version: '1.7.25'  
     
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    
     // Junit
     testCompile 'junit:junit:4.12'
 }
@@ -62,6 +64,15 @@ task wrapper(type: Wrapper) {
 	gradleVersion = '4.0.2'
 }
 
-
-
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("$buildDir/jacocoHtml")
+    }
+}
 

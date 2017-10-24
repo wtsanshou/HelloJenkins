@@ -10,6 +10,8 @@
 //Install Minimalist Gradle Editor
 //Install Docker, Docker-compose
 //Build a mysql in Docker
+use code coverage
+use PMD
 
 2. use Jenkins
 

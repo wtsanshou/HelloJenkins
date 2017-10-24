@@ -1,0 +1,8 @@
+{
+	"name" : "Tester",
+	"height" : 170.0,
+	"weight" : 65.0,
+	"age" : 31,
+	"gender" : true,
+	"metabolic" : null
+}
